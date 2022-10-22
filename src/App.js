@@ -3,6 +3,7 @@ import Main from "./components/Main";
 import Navbar from "./components/Navbar";
 import { auth } from './firebase'
 import { useAuthState } from 'react-firebase-hooks/auth'
+import Error from "./components/Error";
 
 function App() {
   const [user] = useAuthState(auth);
@@ -10,7 +11,7 @@ function App() {
   return (
     <div>
       <Navbar />
-      <Main />
+      {user ? <Main user={user} /> : <Error />}
     </div>
   );
 }
