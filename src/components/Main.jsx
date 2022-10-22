@@ -3,6 +3,7 @@ import Bottom from './Bottom'
 import Chat from './Chat'
 import { query, collection, orderBy, onSnapshot } from "firebase/firestore"
 import { db } from "../firebase"
+import Navbar from "./Navbar";
 const style = {
     mainstyle: {
         height: `calc(100vh - 60px - 56px - 20px)`,
@@ -32,7 +33,8 @@ const Main = () => {
     }, [messages]);
     return (
         <>
-            <div className='bg-[#5CD6FF] w-full h-[92vh] flex justify-center items-center '>
+            <Navbar />
+            <div className='bg-[#5CD6FF] w-full h-[90vh] flex justify-center items-center '>
                 <div className='w-11/12 h-4/5 md:h-3/4 md:w-2/4 bg-white  relative shadow-2xl flex flex-col' style={style.mainstyle}>
                     {messages && messages.map((message) => (
                         <Chat key={message.id} message={message} />
@@ -40,7 +42,7 @@ const Main = () => {
                     <span ref={scroll}></span>
                 </div>
             </div>
-            <div className='flex justify-center items-center'>
+            <div className=' bg-[#5CD6FF] flex justify-center items-center h-[4vh]'>
                 <Bottom scroll={scroll} />
             </div>
         </>

@@ -7,10 +7,8 @@ import Error from "./components/Error";
 
 function App() {
   const [user] = useAuthState(auth);
-  console.log(user);
   return (
     <div>
-      <Navbar />
       {user ? <Main user={user} /> : <Error />}
     </div>
   );
