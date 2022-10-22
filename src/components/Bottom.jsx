@@ -24,12 +24,11 @@ const Bottom = ({ scroll }) => {
         })
     }
     return (
-        <div className='absolute bottom-0 w-11/12 md:w-2/4 mt-4'>
-            <form onSubmit={sendMessage} className=''>
-                <input onChange={(e) => setInput(e.target.value)} value={input} type="text" className='bg-red-700 text-white w-[80%] py-2 px-5 ' placeholder='Enter Message' />
-                <button type="submit" className='bg-green-600 w-[20%] py-2 '>Send</button>
-            </form>
-        </div>
+        <form onSubmit={sendMessage} className='h-14 w-full max-w-[728px] flex absolute bottom-0'>
+            <input onChange={(e) => setInput(e.target.value)} value={input} type="text" className='bg-gray-400 placeholder:text-gray-500 text-gray-700 w-full text-xl p-3 outline-none border-none ' placeholder='Enter Message' />
+            <button type="submit" className='bg-[#007AA3] w-[18%] '>Send</button>
+        </form>
+
     )
 }
 
